@@ -1,0 +1,67 @@
+/*logIn*/
+body{
+    background-color: #FFFEF8;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.titleLogIn{
+	display: flex;
+	justify-content: center;
+	margin: 37px;
+}
+
+.menuLogIn ul {
+	display: flex;
+	align-items: center;
+	list-style-type: none;
+
+}
+.menuLogIn li {
+	padding: 0 10px;
+	font-size: 1.2em;
+}
+
+.menuLogIn li:hover {
+	font-weight: bold;
+}
+
+.formLogIn{
+	display: flex;
+	flex-direction: column;
+	width: 379px;
+    align-items: center;
+}
+.formLogIn input{
+    width: 379px;
+    height: 51px;
+    border: none;
+}
+
+.formLogIn button{
+    background-color: #1D6154;
+    border: none;
+    border-radius: 60px;
+    width: 179px;
+    height: 36px;
+    color: white;
+    font-family: syne;
+}
+
+.mdpOublie{
+    margin-top: 28px;
+    display: flex;
+    justify-content: center;
+    color: black;
+    margin-bottom: 355px;
+}
+
+.mdpOublie:visited,
+.mdpOublie:hover,
+.mdpOublie:active {
+  color: black;
+}
+
