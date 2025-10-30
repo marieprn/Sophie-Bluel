@@ -3,6 +3,10 @@ const gallery = document.querySelector(".gallery");
 let allWorks = [];
 let figures = []; 
 
+document.getElementById('login').addEventListener('click', () => {
+  window.location.href = 'login.html';
+});
+
 //Chargement des catégories
 async function categoriesProjet() {
     const categorie = await fetch("http://localhost:5678/api/categories");
@@ -48,6 +52,12 @@ async function categoriesProjet() {
         categories.appendChild(bntCategories);
         portfolio.insertBefore(categories, gallery);
     }
+
+    //appel mode édition
+    const connexion = localStorage.getItem("connecte");
+    if(connexion === "true"){
+        activeModeEdition();
+    }
 }
 
 //Chargement des projets
@@ -74,8 +84,80 @@ async function projets() {
     }
 }
 
-// --- Lancement ---
 categoriesProjet();
 projets();
 
+//Mode édition déclaration
+function activeModeEdition() {
+    const bandeau = document.createElement("div");
+    bandeau.classList.add("bandeauEdition");
 
+    const icone = document.createElement("img");
+    icone.src = "assets/icons/edition.png";
+    icone.alt = "Icone mode édition";
+    icone.classList.add("iconeEdition");
+
+    const texteEdition = document.createElement("span");
+    texteEdition.textContent = "Mode édition";
+    texteEdition.classList.add("texteEdition")
+
+    bandeau.appendChild(icone);
+    bandeau.appendChild(texteEdition);
+    document.body.prepend(bandeau);
+
+    const navItems = document.querySelectorAll("nav li");
+    let loginLi = null;
+
+    for (let z = 0; z < navItems.length; z++) {
+        if (navItems[z].textContent.trim().toLowerCase() === "login") {
+            loginLi = navItems[z];
+            break;
+        }
+    }
+
+    if (loginLi) {
+        loginLi.textContent = "logout";
+        loginLi.addEventListener("click", () => {
+            localStorage.removeItem("connecte");
+            window.location.reload();
+        });
+    }
+
+    const filtres = document.querySelector(".filters");
+    if (filtres){
+        filtres.style.display = "none";
+    }
+    
+    const headerPortfolio = document.querySelector(".headerPortfolio");
+
+    const bntEdition = document.createElement("div");
+    bntEdition.classList.add("bntEdition");
+
+    const iconebnt = document.createElement("img");
+    iconebnt.src = ("assets/icons/editionBlack.svg");
+    iconebnt.classList.add("iconebnt");
+
+    const boutonModifier = document.createElement("button");
+    boutonModifier.textContent = "modifier";
+    boutonModifier.classList.add("bnt-modifier");
+
+    headerPortfolio.appendChild(bntEdition);
+    bntEdition.prepend(iconebnt);
+    bntEdition.appendChild(boutonModifier);
+    
+    //Modale
+    const modale = document.querySelector(".arrierePlanModale");
+    const iconeFermer = document.querySelector(".iconeFermer");
+
+    boutonModifier.addEventListener("click", () => {
+        modale.style.display = "flex";
+    });
+
+    iconeFermer.addEventListener("click", () => {
+        modale.style.display = "none";
+    });
+
+    modale.addEventListener("click", (e) => {
+        if (e.target === modale) modale.style.display = "none";
+    });
+}
