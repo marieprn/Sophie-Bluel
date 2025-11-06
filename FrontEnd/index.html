@@ -26,7 +26,33 @@
 	<div class="arrierePlanModale">
 		<div class="modale">
 			<img src="assets/icons/croix.svg" alt="croix" class="iconeFermer">
-			<h3>Galerie photo</h3>
+			<div class="modaleGalerie">
+				<h3>Galerie photo</h3>
+				<div class="modificationgalerie">
+				</div>
+				<div class="barreModale">
+				</div>
+				<button class="bntAjoutPhoto">Ajouter une photo</button>
+			</div>
+			<div class="formulaire">
+			<img src="assets/icons/arrowLeft.svg" alt="flèche retour" class="flecheRetour">
+			<h3>Ajout photo</h3>
+				<form id="formAjout" enctype="multipart/form-data">
+					<div class="zoneUpload" id="zoneUpload">
+						<img id="preview" class="previewImage" alt="Prévisualisation">
+						<img src="assets/icons/imgForm.png" alt="image formulaire" class="imgForm">
+						<label for="image">+ Ajouter photo</label>
+						<input type="file" id="image" name="image" accept="image/png, image/jpeg" required>
+						<p>jpg, png : 4mo max</p>
+					</div>
+					<p class="titleForm">Titre</p>
+					<input type="text" name="title" required>
+					<p class="categoryForm">Catégorie</p>
+					<select name="categoryId" required></select>
+					<div class="barreForm"></div>
+					<button type="submit" id="btnValider" disabled>Valider</button>
+				</form>
+			</div>
 		</div>
 		
 	</div>

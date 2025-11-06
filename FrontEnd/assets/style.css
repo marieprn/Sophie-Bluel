@@ -183,7 +183,7 @@ input[type="submit"]{
 
 footer {
   height: 60px;
-  background-color: red;
+  background-color: #FFFFFF;
 }
 
 footer nav {
@@ -296,18 +296,198 @@ justify-content: center;
 .modale{
 	position: relative;
 	background: white;
-	padding: 30px;
 	border-radius: 10px;
 	text-align: center;
 	width: 630px;
-	height: 688px;
+	display: flex;
+	justify-content: center;
+	align-items: center; 
 }
 
 .iconeFermer{
 	position: absolute;
-	top: 10px;
+	top: 15px;
 	right: 15px;
 	cursor: pointer;
 	width: 24px;
 	height: 24px;
+}
+.modaleGalerie{
+	display: block;
+}
+
+.modaleGalerie h3{
+	font-style: Work Sans;
+	font-size: 26px;
+	font-weight: 400;
+	margin-top: 60px;
+	margin-bottom: 46px;
+}
+.modificationgalerie {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+	margin-left: 105px;
+	margin-right: 105px;
+	margin-bottom: 67px;
+}
+
+.modificationgalerie figure {
+    position: relative;
+    width: calc(20% - 16px);
+    margin: 0;
+    overflow: hidden;
+}
+
+.modificationgalerie figure img:first-child {
+    width: 76px;
+    height: 102px;
+}
+
+.poubelle {
+	width: 9px;
+	height: 10px;
+	background-color: black;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+
+.barreModale {
+	border: 1px solid #B3B3B3;
+	margin-left: 105px;
+	margin-right: 105px;
+	margin-bottom: 38px;
+}
+
+.bntAjoutPhoto {
+	border-radius: 60px;
+	background-color: #1D6154;
+	width: 237px;
+	height: 36px;
+	border: none;
+	color: white;
+	margin-bottom: 45px;
+}
+
+/* Page formulaire */
+
+.formulaire {
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  width: 420px;
+}
+
+.formulaire h3{
+	font-size: 26px;
+	font-weight: 400;
+	margin-top: 13px;
+	margin-bottom: 36px;
+}
+
+.flecheRetour {
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	cursor: pointer;
+	width: 21px;
+	height: 21px;
+}
+
+.zoneUpload {
+  background-color: #E8F1F7;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  height: 169px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.imgForm{
+	width: 68px;
+	height: 59px;
+	margin-bottom: 6px;
+}
+
+.zoneUpload label {
+  background-color: #CBD6DC;
+  color: #306685;
+  padding: 10px 33px;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 500;
+  font-family: Work Sans;
+  margin-bottom: 7px;
+}
+
+.zoneUpload #image{
+	display: none;
+}
+
+.previewImage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  display: none;
+  z-index: 2; /* passe au-dessus */
+}
+
+.zoneUpload.has-preview .imgForm,
+.zoneUpload.has-preview label,
+.zoneUpload.has-preview p {
+  opacity: 0;
+}
+
+.zoneUpload p {
+  color: #306685;
+  font-size: 10px;
+  margin-top: 7px;
+}
+
+#formAjout input[type="text"],
+#formAjout select {
+  width: 100%;
+  height: 51px;
+  margin-bottom: 20px;
+  border: none;
+  box-shadow: 0px 4px 14px 0px rgba(0,0,0,0.09);
+}
+
+.titleForm{
+margin-bottom: 10px;
+text-align: left;
+color: #3D3D3D;
+}
+
+.categoryForm {
+margin-bottom: 10px;
+text-align: left;
+color: #3D3D3D;
+}
+
+.barreForm {
+	border: 1px solid #B3B3B3;
+	margin-bottom: 32px;
+	margin-top: 47px;
+}
+
+#btnValider {
+  background-color: #A7A7A7;
+  color: white;
+  border: none;
+  padding: 10px 49px;
+  border-radius: 60px;
+  width: 237px;
+  height: 36px;
 }
